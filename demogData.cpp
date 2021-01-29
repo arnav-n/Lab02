@@ -7,8 +7,9 @@ std::ostream& operator<<(std::ostream &out, const demogData &DD) {
     out << "\nPopulation info: \n(\% over 65): " << DD.popOver65;
     out << "\n(\% under 18): " << DD.popUnder18;
     out << "\n(\% under 5): " << DD.popUnder5;
-    out << "\nEducation info: " << "\n";
+    out << "\nEducation info: ";
     out << "\n(\% Bachelor degree or more): " << DD.BAup;
     out << "\n(\% high school or more): " << DD.HSup;
+    out << "\nTotal Population: " << DD.totalPop << "\n"; 
     return out;
 }
