@@ -23,6 +23,7 @@ class stateDemog{
     double getBAup() { return BAup; }
     double getHSup() { return HSup; }
     double getTotalPop() { return totalPop; }
+    int getNumOfCounties() { return numOfCounties; }
     map<string, demogData> getCounties() { return counties; }
 
     void pushCounty (demogData county);
@@ -31,6 +32,7 @@ class stateDemog{
   private:
     //unlike county objects, state objects store the total population for all variables, not the propotion
      string name;
+     int numOfCounties;
      double popOver65;
      double popUnder18;
      double popUnder5;

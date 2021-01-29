@@ -29,6 +29,7 @@ void stateDemog::pushCounty(demogData county){
   string countyName = county.getName();
   counties.insert({countyName, county});
   totalPop += county.getTotalPop();
+  numOfCounties+=1; 
   popOver65 += (county.getpopOver65() * county.getTotalPop());
   popUnder18 += (county.getpopUnder18() * county.getTotalPop());
   popUnder5 += (county.getpopUnder5() * county.getTotalPop());
@@ -46,7 +47,7 @@ std::ostream& operator<<(std::ostream &out, const stateDemog &SD) {
     int collegePop = SD.BAup/100;
     int diplomaPop = SD.HSup/100;
     out << "State Info: " << SD.name;
-    out << " Number of Counties: " << SD.counties.size();
+    out << " Number of Counties: " << SD.numOfCounties;
     out << "\nPopulation info:\n(over 65): " << setprecision (2) << fixed<< SD.popOver65/SD.totalPop<< "% and total: " << fixed << oldPop;
     out << "\n(under 18): " << setprecision (2) << fixed<< SD.popUnder18/SD.totalPop<< "% and total: " << fixed << teenPop;
     out << "\n(under 5): " << setprecision (2) << fixed<< SD.popUnder5/SD.totalPop<< "% and total: " <<fixed << youngPop;

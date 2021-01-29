@@ -84,15 +84,15 @@ string dataAQ::wisePop(){
 }
 string dataAQ::underServeHS(){
   map<string, stateDemog>:: iterator it;
-  double curMax = 0;
+  double curMin = 100;
   string curName = "";
 
   for (it = states.begin(); it!=states.end(); it++){
       stateDemog d = it->second;
       double totalDiplomas = d.getHSup();
       double proportion = totalDiplomas/d.getTotalPop();
-      if(proportion>curMax){
-          curMax=proportion;
+      if(proportion<curMin){
+          curMin=proportion;
           curName=it->first;
       }
   }
